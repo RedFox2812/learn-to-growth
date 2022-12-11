@@ -7,7 +7,9 @@ function signin(e){
 	var data = JSON.parse(user);
 
 	
-	if(user == null) {
+	if(username == "" 
+			&& email == ""
+		   	&& password == "") {
 		document.querySelector(".footer-user").classList.add("err");
 		document.querySelector(".error-name").innerText = "Username is required";
 		document.querySelector(".footer-email").classList.add("err");
