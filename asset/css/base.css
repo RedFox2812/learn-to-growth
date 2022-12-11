@@ -2,6 +2,21 @@
 :root{
 	--text-color: #141E30;
 	--input-color: #f3f3f3;
-	--button-color: rgb(8,14,7);
-	--bg-color: rgb(60,83,60)
+	--rgb-color: #181D31;
+	--bg-color: #678983;
+	--text-colorf : #fff;
+}	
+.wf{
+	width: 100%;
+}
+.flex{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flexc{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
 }
