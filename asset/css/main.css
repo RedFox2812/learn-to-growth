@@ -18,7 +18,7 @@ body {
     opacity: 0.8;
     padding: 0%;
     margin: 0%;
-    padding: 5px;
+    padding:0px;
 }
 .header-navbar{
     display:flex;
@@ -33,7 +33,7 @@ body {
 }
 .item{
     color: #fff;
-    padding: 5px;
+    padding: 0px;
     cursor: default;
     position: relative;
 }
@@ -73,19 +73,36 @@ body {
 .btn-header{
     border: none;
     border-radius: 4px;
-    padding: 10px 30px;
+    padding: 4px 30px;
     color: var(--text-colorf);
     background-color: var(--bg-color);
-    width: 100px;
-}
-.btn-header *{
-    color: var(--text-colorf);
     text-decoration: none;
-    font-size: 15px ;
+    max-width: 110px;
+    min-width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s all ease-in;
+}
+.btn-header:hover{
+    opacity: 0.8;
 }
 .item-btn{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 250px;
+    width: 240px;
+}
+.icon-poin-header{
+    margin-right: 10px;
+    font-size: 20px;
+    color: var(--text-colorf);
+    background-color: var(--bg-color) ;
+    border: 2px solid var(--input-color);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
 }
