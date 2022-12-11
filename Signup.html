@@ -6,14 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login || Register</title>
      <!-- font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+     <link rel="stylesheet" href="./asset/font/fontawesome-free-6.1.1-web/css/all.min.css" crossorigin="anonymous">
     <!-- css stylesheet -->
     <link rel="stylesheet" href="./acess/css/Signup.css">
-	<script defer src="./acess/js/ChangeForm.js"></script>
-	<script defer src="./acess/js/ShowPass.js"></script>
-	<script defer src="./acess/js/Create.js"></script>
-	<script defer src="./acess/js/Login.js"></script>
-	<script defer src="./acess/js/CheckInput.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -91,12 +86,31 @@
                 </div>
 				<span class="create">Login account <strong class="form-login">Login</strong></span>
             </form>
-		</div>
-		<div class="banner">
-			<img class="left-banner" src="acess/img/imgLogin/LeftForm.jpg">
-		</div>
-	</div>
-   
-	
+        </div>
+        <div class="overlay-container" id="overlayCon">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Login with your personal information</p>
+                    <button>Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal information to create a new account</p>
+                    <button>Sign Up</button>
+                </div>
+            </div>
+            <button id="overlayBtn"></button>
+        </div>
+    </div>
+
+    <footer>
+        
+    </footer>
+    
+	<script src="./acess/js/Signup.js"></script>
+	<script src="./acess/js/Login.js"></script>
+	<script src="./acess/js/Create.js"></script>
+	<script src="./acess/js/ShowPass.js"></script>
 </body>
 </html>
