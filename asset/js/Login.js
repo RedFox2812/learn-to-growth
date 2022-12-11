@@ -15,15 +15,31 @@ function signin(e){
 		document.querySelector(".footer-password").classList.add("err");
 		document.querySelector(".error-pass").innerText = "Password is required";
 	}
-	if(username != data.username){
+	else if(username == data.username 
+			&& email == ""
+		   	&& password == ""){
+		document.querySelector(".footer-email").classList.add("err");
+		document.querySelector(".error-email").innerText = "Email is required";
+		document.querySelector(".footer-password").classList.add("err");
+		document.getElementById("er-pass").innerText = "Password is required";
+	}
+	else if(username == data.username 
+			&& email == data.email
+		   	&& password == ""){
+		document.querySelector(".footer-password").classList.add("err");
+		document.getElementById("er-pass").innerText = "Password is required";
+	}
+	else if(username != data.username
+			&& email == data.email
+		   	&& password == data.password){
 		document.querySelector(".footer-user").classList.add("err");
 		document.querySelector(".error-name").innerText = "Wrong username";
 	}
-	if(email != data.email){
+	else if(email != data.email){
 		document.querySelector(".footer-email").classList.add("err");
 		document.querySelector(".error-email").innerText = "Wrong email";
 	}
-	if(password != data.password){
+	else if(password != data.password){
 		document.querySelector(".footer-password").classList.add("err");
 		document.querySelector(".error-pass").innerText = "Wrong password";
 	}

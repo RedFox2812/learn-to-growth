@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login || Register</title>
      <!-- font awesome icons -->
-     <link rel="stylesheet" href="./asset/font/fontawesome-free-6.1.1-web/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <!-- css stylesheet -->
-    <link rel="stylesheet" href="./acess/css/Signup.css">
+    <link rel="stylesheet" href="./asset/css/Signup.css">
+	<script defer src="./asset/js/ChangeForm.js"></script>
+	<script defer src="./asset/js/ShowPass.js"></script>
+	<script defer src="./asset/js/Create.js"></script>
+	<script defer src="./asset/js/Login.js"></script>
+	<script defer src="./asset/js/CheckInput.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -33,7 +38,7 @@
                     <input class="password" type="password" placeholder="Password" name="Password">
 					<i class="s-eye pass fa-regular fa-eye shows"></i>
 					<i class="h-eye pass fa-regular fa-eye-slash"></i>
-					<div class="error"><p class="error-pass"></div>
+					<div class="error"><p class="error-pass" id="er-pass"></div>
                     <label class="footer-password"></label>
                 </div>
 				<div class="footer-field">
@@ -59,23 +64,23 @@
                 <span class="text-forms">Register your account to save and view activities!</span>
                 <div class="field">
 					<i class="fa-solid fa-user icon"></i>
-                    <input class="username" type="text" placeholder="Username" name="Username"  id="username">
-					<div class="error"></div>
-                    <label></label>
+                    <input class="username" type="text" placeholder="Username" name="Username"  id="username">	
+					<div class="error"><p class="error-name-register"></div>
+                    <label class="footer-username-register"></label>
                 </div>
                 <div class="field">
 					<i class="fa-solid fa-envelope icon"></i>
                     <input class="email" type="email" placeholder="Email" name="Email"  id="email">
-					<div class="error"></div>
-                    <label></label>
+					<div class="error"><p class="error-email-register"></div>
+                    <label class="footer-email-register"></label>
                 </div>
                 <div class="field">
 					<i class="fa-solid fa-key icon"></i>
                     <input class="password" type="password" placeholder="Password" name="Password" id="password">
 					<i class="s-eye pass fa-regular fa-eye shows"></i>
 					<i class="h-eye pass fa-regular fa-eye-slash"></i>
-					<div class="error"></div>
-                    <label></label>
+					<div class="error"><p class="error-pass-register" id="er-pass-register"></div>
+                    <label class="footer-password-register"></label>
                 </div>
 				<button>Register</button>
 				<span class="or-login">Or</span>
@@ -86,31 +91,12 @@
                 </div>
 				<span class="create">Login account <strong class="form-login">Login</strong></span>
             </form>
-        </div>
-        <div class="overlay-container" id="overlayCon">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Login with your personal information</p>
-                    <button>Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal information to create a new account</p>
-                    <button>Sign Up</button>
-                </div>
-            </div>
-            <button id="overlayBtn"></button>
-        </div>
-    </div>
-
-    <footer>
-        
-    </footer>
-    
-	<script src="./acess/js/Signup.js"></script>
-	<script src="./acess/js/Login.js"></script>
-	<script src="./acess/js/Create.js"></script>
-	<script src="./acess/js/ShowPass.js"></script>
+		</div>
+		<div class="banner">
+			<img class="left-banner" src="acess/img/imgLogin/LeftForm.jpg">
+		</div>
+	</div>
+   
+	
 </body>
 </html>
