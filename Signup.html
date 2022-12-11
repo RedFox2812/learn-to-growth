@@ -4,92 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in || Sign up from</title>
+    <title>Login || Register</title>
      <!-- font awesome icons -->
      <link rel="stylesheet" href="./asset/font/fontawesome-free-6.1.1-web/css/all.min.css" crossorigin="anonymous">
     <!-- css stylesheet -->
     <link rel="stylesheet" href="./acess/css/Signup.css">
+	<script defer src="./acess/js/ChangeForm.js"></script>
+	<script defer src="./acess/js/ShowPass.js"></script>
+	<script defer src="./acess/js/Create.js"></script>
+	<script defer src="./acess/js/Login.js"></script>
+	<script defer src="./acess/js/CheckInput.js"></script>
 </head>
 <body>
-
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            <form action="#" onSubmit="signup()">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social social-hover1"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social social-hover2"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social social-hover3"><i class="fa-brands fa-twitter"></i></a>
+	<div class="container">
+		<div class="form-container login active">
+			<form class="form" action="#" onSubmit="signin()">
+                <h1 class="title-form">Login</h1>
+                <span class="text-forms">Login to your account to save and view your activities!</span>
+                <div class="field">
+					<i class="fa-solid fa-user icon"></i>
+                    <input id="us" class="username user" type="text" placeholder="Username" name="Username">
+					<div class="error"><p class="error-name"></p></div>
+                    <label class="footer-user"></label>
                 </div>
-                <span>Or use your email for registration</span>
-                <div class="infield">
-                    <input id="username" type="text" placeholder="Name">
-                    <label></label>
+                <div class="field">
+					<i class="fa-solid fa-envelope icon"></i>
+                    <input class="email" type="email" placeholder="Email" name="Email">
+					<div class="error"><p class="error-email"></div>
+                    <label class="footer-email"></label>
                 </div>
-                <div class="infield">
-                    <input id="email" type="email" placeholder="Email" name="email">
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input id="password" type="password" placeholder="Password">
+                <div class="field">
+					<i class="fa-solid fa-key icon"></i>
+                    <input class="password" type="password" placeholder="Password" name="Password">
 					<i class="s-eye pass fa-regular fa-eye shows"></i>
 					<i class="h-eye pass fa-regular fa-eye-slash"></i>
-                    <label></label>
+					<div class="error"><p class="error-pass"></div>
+                    <label class="footer-password"></label>
                 </div>
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="form-container sign-in-container">
-            <form action="#" onSubmit="signin()">
-                <h1>Sign in</h1>
-                <div class="social-container">
+				<div class="footer-field">
+					<div class="checkbox">
+						<input class="check" type="checkbox">
+						<p class="text-check">remember</p>
+					</div>
+					<a class="forgot" href="#"><p class="forgot-pass">Forgot your password?</p></a>
+				</div>
+				<button>Login</button>
+				<span class="or-login">Or</span>
+				<div class="social-container">
                     <a href="#" class="social social-hover1"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social social-hover2"><i class="fab fa-google-plus-g"></i></a>
                     <a href="#" class="social social-hover3"><i class="fa-brands fa-twitter"></i></a>
                 </div>
-                <span>Or use your account</span>
-				<div class="infield">
-                    <input class="username" type="text" placeholder="Name">	
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input class="email" type="email" placeholder="Email" name="email">
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input class="password" type="password" placeholder="Password">
-					<i class="show-eye pass fa-regular fa-eye shows"></i>
-					<i class="hidden-eye pass fa-regular fa-eye-slash"></i>
-                    <label></label>
-                </div>
-                <a href="#" class="forgot">Forgot your password?</a>
-                <button>Sign In</button>
+				<span class="create">Create account <strong class="form-create">register</strong></span>
             </form>
-        </div>
-        <div class="overlay-container" id="overlayCon">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>Login with your personal information</p>
-                    <button>Sign In</button>
+		</div>
+		<div class="form-container register">
+			<form action="#" onSubmit="signup()">
+                <h1 class="title-form">Register</h1>
+                <span class="text-forms">Register your account to save and view activities!</span>
+                <div class="field">
+					<i class="fa-solid fa-user icon"></i>
+                    <input class="username" type="text" placeholder="Username" name="Username"  id="username">
+					<div class="error"></div>
+                    <label></label>
                 </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal information to create a new account</p>
-                    <button>Sign Up</button>
+                <div class="field">
+					<i class="fa-solid fa-envelope icon"></i>
+                    <input class="email" type="email" placeholder="Email" name="Email"  id="email">
+					<div class="error"></div>
+                    <label></label>
                 </div>
-            </div>
-            <button id="overlayBtn"></button>
-        </div>
-    </div>
-
-    <footer>
-        
-    </footer>
-    
-	<script src="./acess/js/Signup.js"></script>
-	<script src="./acess/js/Login.js"></script>
-	<script src="./acess/js/Create.js"></script>
-	<script src="./acess/js/ShowPass.js"></script>
+                <div class="field">
+					<i class="fa-solid fa-key icon"></i>
+                    <input class="password" type="password" placeholder="Password" name="Password" id="password">
+					<i class="s-eye pass fa-regular fa-eye shows"></i>
+					<i class="h-eye pass fa-regular fa-eye-slash"></i>
+					<div class="error"></div>
+                    <label></label>
+                </div>
+				<button>Register</button>
+				<span class="or-login">Or</span>
+				<div class="social-container">
+                    <a href="#" class="social social-hover1"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social social-hover2"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social social-hover3"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+				<span class="create">Login account <strong class="form-login">Login</strong></span>
+            </form>
+		</div>
+		<div class="banner">
+			<img class="left-banner" src="acess/img/imgLogin/LeftForm.jpg">
+		</div>
+	</div>
+   
+	
 </body>
 </html>

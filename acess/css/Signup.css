@@ -1,15 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root{
-	--text-color: #141E30;
-	--input-color: #f3f3f3;
-	--button-color: rgb(8,14,7);
-	--bg-color: rgb(60,83,60)
+	--button-color: rgb(115,141,152);
+	--text-color: rgb(8,14,7);
+	--bg-color: rgb(60,83,60);
+}
+.err{
+	background-color: #EC0A0E;
 }
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
 	
+}
+body {
+    display: grid;
+	height: 100vh;
+	background-color: #f6f5f7;
+    place-content: center;
+    font-family: 'Poppins';
+}
+.container {
+	position: relative;
+	width: 950px;
+	height: 600px;
+	background-color: #FFF;
+	box-shadow: 2px 4px 6px #5557;
+	border-radius: 10px;
+}
+.form-container {
+	display: none;
+	position: absolute;
+	left: 40%;
+	width: 60%;
+	height: 100%;
+	padding: 0 40px;
+	transition: all 0.8s ease-in-out;
+}
+.title-form{
+	letter-spacing: 3px;
+	color: var(--text-color);
+}
+.text-forms{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 0 60px;
+}
+span {
+	font-size: 13px;
+}
+.field {
+	position: relative;
+	margin: 8px 0px;
+	width: 100%;
+	height: 10%;
+}
+.pass{
+	font-size: 18px;
+	color: var(--text-color);
+	position: absolute;
+	display: none;
+	right: 12px;
+	top: 13px;
+	cursor: pointer;
+}
+.shows{
+	display: block;
+}
+input {
+	font-size: 16px;
+	width: 100%;
+	padding: 12px 30px;
+	border: none;
+	outline: none;
+}
+.icon{
+	font-size: 20px;
+	color: var(--text-color);
+	position: absolute;
+	left: 0;
+	top: 11px;
+}label{
+	position: absolute;
+	right: 0;
+	bottom: 16px;
+	width: 100%;
+	height: 2px;
+	background-color: #909090;
+}
+.or-login{
+	margin-top: 10px;
 }
 .fa-facebook-f {
 	color: #1877F2;
@@ -20,53 +107,11 @@
 .fa-twitter {
 	color: #1DA1F3;
 }
-
-body {
-    height: 100vh;
-    background: #f6f5f7;
-    display: grid;
-    place-content: center;
-    font-family: 'Poppins', sans-serif;
-}
-.container {
-	position: relative;
-	width: 850px;
-	height: 500px;
-	background-color: #FFF;
-	box-shadow: 25px 30px 35px #5557;
-	border-radius: 13px;
-	overflow: hidden;
-}
-.form-container {
-	position: absolute;
-	width: 60%;
-	height: 100%;
-	padding: 0 40px;
-	transition: all 0.6s ease-in-out;
-}
-.sign-up-container {
-	opacity: 0;
-	z-index: 1;
-}
-.sign-in-container {
-	z-index: 2;
-}
-form {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 0 50px;
-}
-h1 {
-	color: var(--text-color);
-}
 .social{
 	transition: all 0.2s ease-in-out;
 }
 .social-container {
-	margin: 20px 0px;
+	margin: 10px 0px;
 }
 .social-container a {
 	border: 1px solid #CCC;
@@ -74,6 +119,7 @@ h1 {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	text-decoration: none;
 	margin: 0px 5px;
 	width: 40px;
 	height: 40px;
@@ -96,61 +142,6 @@ h1 {
 .social-container .social-hover3:hover   {
 	background-color: #1DA1F3;
 }
-span {
-	font-size: 12px;
-}
-.infield {
-	position: relative;
-	margin: 8px 0px;
-	width: 100%;
-}
-.pass{
-	color: var(--text-color);
-	position: absolute;
-	display: none;
-	right: 12px;
-	top: 30%;
-}
-.shows{
-	display: block;
-}
-input {
-	width: 100%;
-	padding: 12px 8px;
-	background-color: var(--input-color);
-	border: none;
-	outline: none;
-}
-label {
-	position: absolute;
-	left: 50%;
-	top: 100%;
-	transform: translateX(-50%);
-	width: 0%;
-	height: 2px;
-	background: var(--bg-color);
-	transition: 0.3s;
-}
-
-input:focus ~ label {
-	width: 100%;
-}
-a {
-	color: #333;
-	font-size: 14px;
-	text-decoration: none;
-	margin: 15px 0px;
-}
-a.forgot {
-	padding-bottom: 3px;
-	border-bottom: 2px solid #EEE;
-}
-.forgot {
-	opacity: 0.9;
-}
-.forgot:hover {
-	opacity: 1;
-}
 button {
 	border-radius:  20px;
 	border: 1px solid var(--button-color);
@@ -170,115 +161,63 @@ button {
 	background-color: #FFF;
 	color: var(--button-color);
 }
-.overlay-container {
+.footer-field{
+	margin-top: 5px;
+	display: flex;
+	flex-direction: row;
+}
+.checkbox{
+	display: flex;
+}
+.text-check{
+	font-size: 15px;
+	text-transform: capitalize;
+	color: var(--text-color);
+	margin-left: 8px;
+}
+.forgot{
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--text-color);
+	transition: all 0.2s ease-in-out;
+}
+.forgot:hover{
+	opacity: 0.8;
+}
+.forgot-pass{
+	font-size: 15px;
+	margin-left: 90px;
+}
+.banner{
 	position: absolute;
 	top: 0;
-	left: 60%;
 	width: 40%;
 	height: 100%;
-	overflow: hidden;
-	transition: transform 0.6s ease-in-out;
-	z-index: 9;
 }
-#overlayBtn {
+.active{
+	display: block;
+}
+.left-banner{
+	width: 100%;
+	height: 100%;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.create{
+	margin-top: 5px;
+	text-transform: uppercase;
+}
+strong{
+	text-transform: uppercase;
+	color: #1877F2;
 	cursor: pointer;
-	position: absolute;
-	left: 50%;
-	top: 304px;
-	transform: translateX(-50%);
-	width: 143.67px;
-	height: 40px;
-	border: 1px solid #FFF;
-	background: transparent;
-	border-radius: 20px;
+	text-decoration: underline;
+	transition: all 0.3s ease-in-out;
 }
-.overlay {
-	position: relative;
-	background: var(--bg-color);
-	color: #FFF;
-	left: -150%;
-	height: 100%;
-	width: 250%;
-	transition: transform 0.6s ease-in-out;
+strong:hover{
+	opacity: 0.8;
 }
-.overlay-panel {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	padding: 0px 40px;
-	text-align: center;
-	height: 100%;
-	width: 340px;
-	transition: 0.6s ease-in-out;
+.error{
+	font-size: 13px;
+	color: #EC0A0E;
 }
-.overlay-left {
-	right: 60%;
-	transform: translateX(-12%);
-}
-.overlay-right {
-	right: 0;
-	transform: translateX(0%);
-}
-.overlay-panel h1 {
-	color: #FFF;
-}
-p {
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 25px 0 35px;
-}
-.overlay-panel button {
-	border: none;
-	background: transparent;
-}
-.right-panel-active .overlay-container {
-	transform: translateX(-150%);
-}
-.right-panel-active .overlay {
-	transform: translateX(50%);
-}
-.right-panel-active .overlay-left {
-	transform: translateX(25%);
-}
-.right-panel-active .overlay-right {
-	transform: translateX(35%);
-}
-.right-panel-active .sign-in-container {
-	transform: translateX(20%);
-	opacity: 0;
-}
-.right-panel-active .sign-up-container {
-	transform: translateX(66.7%);
-	opacity: 1;
-	z-index: 5;
-	animation: show 0.6s;
-}
-@keyframes show {
-	0%, 50% {
-		opacity: 0;
-		z-index: 1;
-	}
-	50.1%, 100% {
-		opacity: 1;
-		z-index: 5;
-	}
-}
-.btnScaled {
-	animation: scaleBtn 0.6s
-}
-@keyframes scaleBnt {
-	0% {
-		width: 143.67px;
-	}
-	50% {
-		width: 250px;
-	}
-	100% {
-		width: 143.67px;
-	}
-}
-
