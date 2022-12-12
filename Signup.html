@@ -59,7 +59,7 @@
             </form>
 		</div>
 		<div class="form-container register">
-			<form action="#" onSubmit="signup()">
+			<form action="#" onSubmit="signup()" id="form">
                 <h1 class="title-form">Register</h1>
                 <span class="text-forms">Register your account to save and view activities!</span>
                 <div class="field">
@@ -77,8 +77,8 @@
                 <div class="field">
 					<i class="fa-solid fa-key icon"></i>
                     <input class="password" type="password" placeholder="Password" name="Password" id="password">
-					<i class="s-eye pass fa-regular fa-eye shows"></i>
-					<i class="h-eye pass fa-regular fa-eye-slash"></i>
+					<i class="s-eye pass fa-regular fa-eye shows" id="s-eye"></i>
+					<i class="h-eye pass fa-regular fa-eye-slash" id="h-eye"></i>
 					<div class="error"><p class="error-pass-register" id="er-pass-register"></div>
                     <label class="footer-password-register"></label>
                 </div>

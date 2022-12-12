@@ -6,7 +6,6 @@ function signin(e){
 	var user = localStorage.getItem(username);	
 	var data = JSON.parse(user);
 
-	
 	if(username == "" 
 			&& email == ""
 		   	&& password == "") {
@@ -17,6 +16,10 @@ function signin(e){
 		document.querySelector(".footer-password").classList.add("err");
 		document.querySelector(".error-pass").innerText = "Password is required";
 	}
+	else if(user == null) {
+		alert("Account does not exist");
+		window.location.reload();
+	}
 	else if(username != "" 
 			&& email == ""
 		   	&& password == ""){
@@ -24,6 +27,14 @@ function signin(e){
 		document.querySelector(".error-email").innerText = "Email is required";
 		document.querySelector(".footer-password").classList.add("err");
 		document.getElementById("er-pass").innerText = "Password is required";
+	}
+	else if(username != ""
+			&& email != data.email
+		   	&& password != data.password) {
+		document.querySelector(".footer-email").classList.add("err");
+		document.querySelector(".error-email").innerText = "Wrong email";
+		document.querySelector(".footer-password").classList.add("err");
+		document.querySelector(".error-pass").innerText = "Wrong password";
 	}
 	else if(username != "" 
 			&& email == data.email

@@ -14,7 +14,26 @@ function signup(e){
 		document.querySelector(".footer-password-register").classList.add("err");
 		document.querySelector(".error-pass-register").innerText = "Password is required";
 	}
-	
+	else if(username != "" 
+	   && email == "" 
+	   && password ==""){
+		document.querySelector(".footer-email-register").classList.add("err");
+		document.querySelector(".error-email-register").innerText = "Email is required";
+		document.querySelector(".footer-password-register").classList.add("err");
+		document.querySelector(".error-pass-register").innerText = "Password is required";
+	}
+	else if(username != "" 
+	   && email == "" 
+	   && password !=""){
+		document.querySelector(".footer-email-register").classList.add("err");
+		document.querySelector(".error-email-register").innerText = "Email is required";
+	}
+	else if(username != "" 
+	   && email != "" 
+	   && password == ""){
+		document.querySelector(".footer-password-register").classList.add("err");
+		document.querySelector(".error-pass-register").innerText = "Password is required";
+	}
 	else{
 		const user = {
 			username: username,
