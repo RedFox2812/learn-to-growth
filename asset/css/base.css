@@ -2,8 +2,13 @@
 :root{
 	--text-color: #141E30;
 	--input-color: #f3f3f3;
-	--rgb-color: #181D31;
+	--rgb-color:rgba(24, 29, 49, 1);
+	--rgb-color08:rgba(24, 29, 49, 0.8);
+	--rgb-color06:rgba(24, 29, 49, 0.6);
 	--bg-color: #678983;
+	--rgb2-color:rgba(94, 110, 107, 1);
+	--rgb2-color08:rgba(94, 110, 107, 1);
+	--rgb2-color06:rgba(94, 110, 107, 1);
 	--text-colorf : #fff;
 	--hover-color : #6ECCAF;
 }	
