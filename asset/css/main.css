@@ -221,6 +221,4 @@ body {
     background-color: var(--text-colorf);
     opacity: 1;
 }
-.minute{
-    pointer-events: none;
-}
+.minute{}

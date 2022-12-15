@@ -2,6 +2,8 @@
 const btnStartTimeCount = document.querySelector(".clock__count");
 let timeSecondCurr = 0;
 let timeMinuteCurr = 0;
+let timeOfSelectionS = 0;
+let timeOfSelectionM = 0;
 btnStartTimeCount.addEventListener("click", handleStartOrStop);
 function handleStartOrStop(e){
     // change text 
@@ -10,15 +12,16 @@ function handleStartOrStop(e){
     if (e.target.matches(".clock__count"))
     {   
         
-        const textTime = e.target.querySelector(".time__count-btnstart")
+        const textTime = e.target.querySelector(".time__count-btnstart");
         const value = textTime.innerHTML;
+        
         if(value === "Start"){
             textTime.innerHTML = "Pause";
             countTimeft();
             return;
         }
         if(value === "Pause"){
-            clearTimeout(count)
+
             textTime.innerHTML = "Start";
             return;
         }
@@ -26,9 +29,13 @@ function handleStartOrStop(e){
     
 }
 function countTimeft(){
+    const textTime = document.querySelector(".time__count-btnstart");
+    if(textTime.innerHTML=="Start"){
+        clearTimeout(count)
+        return;
+    }
     const timeMinute = document.querySelector("#minute");
     const timeSecond = document.querySelector("#second");
-    
     if(Number(timeSecond.innerHTML) === 0){
         timeMinuteCurr = Number(timeMinute.innerHTML) - 1;
         if(timeMinuteCurr<10){
@@ -46,12 +53,36 @@ function countTimeft(){
     }
     console.log(timeSecondCurr)
     if(timeSecond.innerHTML <= 0 && timeMinute.innerHTML <=0){
-        timeSecond.innerHTML = "00";
-        timeMinute.innerHTML = "05";
+        textTime.innerHTML = "Pause"; 
+        timeSecond.innerHTML = "03";
+        timeMinute.innerHTML = "00";
+        const selection = document.querySelector(".time__selection--active");
+
+        if(selection.matches(".time__selection--end")){
+            selection.classList.remove("time__selection--active");
+            const selectionBegin = document.querySelector(".time__selection--begin");
+            selectionBegin.classList.add("time__selection--active");
+        } else {
+            changeSelection();
+        }
     }
     var count = setTimeout(countTimeft, 1000);
 }
-
+function changeSelection(){
+    const selection = document.querySelector(".time__selection--active");
+    if(selection.matches("#pomodoro")){
+        timeOfSelectionM = 20;
+        timeOfSelectionS = 00; 
+        const timeMinute = document.querySelector("#minute");
+        const timeSecond = document.querySelector("#second");
+        timeSecond.innerHTML = timeOfSelectionS;
+        timeMinute.innerHTML = timeOfSelectionM;
+    }
+    if(selection.matches(".time__selection")){
+        selection.classList.remove("time__selection--active");
+        selection.nextElementSibling.classList.add("time__selection--active");
+    }
+}
 // 2. selections 
 // 3. công thức vòng lặp
 // 4. chọn số lượng vòng lặp
